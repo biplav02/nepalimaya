@@ -2,57 +2,94 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Calendar, MapPin, Music, Palette, Utensils, Users, Star, Camera } from 'lucide-react';
+import { Calendar, MapPin, Music, Palette, Utensils, Users, Star, Camera, Award, BookOpen, Mic, Heart } from 'lucide-react';
 import festivalImage from '@/assets/festival-celebration.jpg';
 
 const Festival = () => {
   const festivalHighlights = [
     {
       icon: Palette,
-      title: "Art Exhibitions",
-      description: "Curated displays of traditional and contemporary Mithila paintings from master artists."
+      title: "Art Exhibitions & Auctions",
+      description: "Curated showings of traditional and contemporary Mithila artworks by artists from Nepal, India, the U.S., and other countries, with fundraising auctions supporting artist communities."
     },
     {
-      icon: Music,
-      title: "Cultural Performances",
-      description: "Traditional Maithili music, dance, and theatrical performances celebrating our heritage."
+      icon: Award,
+      title: "Kids Art Workshops & Awards",
+      description: "Hands-on sessions where children learn Mithila painting techniques and environmental or social themes (SDG-aligned), culminating in recognition and awards."
+    },
+    {
+      icon: BookOpen,
+      title: "Cultural & Literary Programs",
+      description: "Panel discussions on Mithila art, culture, literature, and linguistics; music and dance performances; storytelling; and poetry celebrating Maithil heritage."
     },
     {
       icon: Utensils,
-      title: "Authentic Cuisine",
-      description: "Experience the distinctive flavors of Maithil cuisine prepared by traditional cooks."
+      title: "Taste of Mithila",
+      description: "Culinary showcases featuring authentic Mithila cuisine, adding a sensory cultural dimension to the festival with traditional recipes and cooking demonstrations."
     },
     {
-      icon: Users,
-      title: "Community Gathering",
-      description: "A reunion of the Maithil diaspora and an opportunity for cultural exchange."
+      icon: Mic,
+      title: "Community Leadership Panels",
+      description: "Dialogues with community leaders, scholars, and organizations on preserving Mithila culture in the diaspora, featuring heritage and identity discussions."
+    },
+    {
+      icon: Music,
+      title: "Traditional Performances",
+      description: "Live Maithili music, folk dances, and theatrical performances celebrating the rich performing arts traditions of the Mithila region."
     }
   ];
 
-  const pastFestivals = [
+  const festivalHistory = [
+    {
+      year: "2025",
+      theme: "Life on Land (SDG 15)",
+      highlights: "6th Annual Festival, biodiversity workshops, environmental stewardship focus, Master Artist S.C. Suman featured",
+      location: "New York City & Virtual"
+    },
+    {
+      year: "2024",
+      theme: "Climate Action (SDG 13)",
+      highlights: "UN Headquarters exhibition during HLPF, climate-focused artworks, diplomatic receptions",
+      location: "UN New York, Diversity Plaza"
+    },
     {
       year: "2023",
-      theme: "Bridging Generations",
-      attendees: "2,500+",
-      highlights: "First hybrid virtual-in-person event, youth art competition, documentary screening"
+      theme: "Gender Equality (SDG 5)",
+      highlights: "Women artists showcase, social justice artworks, 4th Annual Festival, Congresswoman participation",
+      location: "Jackson Heights, Queens"
     },
     {
       year: "2022",
-      theme: "Resilience & Renewal",
-      attendees: "1,800+",
-      highlights: "Post-pandemic celebration, artist relief fund launch, master artist retrospective"
+      theme: "Quality Education (SDG 4)",
+      highlights: "Education through art programming, school partnerships, community outreach",
+      location: "Various NYC Venues"
+    },
+    {
+      year: "2021",
+      theme: "Community Resilience",
+      highlights: "Congressional Proclamation by Rep. Grace Meng, hybrid virtual-in-person format, pandemic recovery",
+      location: "Virtual & In-Person"
     },
     {
       year: "2019",
-      theme: "Art for Climate",
-      attendees: "3,000+",
-      highlights: "SDG-themed art exhibition, UN partnership announcement, cultural parade"
+      theme: "Inaugural Festival",
+      highlights: "First Mithila Festival USA, UN Headquarters exhibition debut, Permanent Mission of Nepal partnership",
+      location: "UN HQ & New York"
+    }
+  ];
+
+  const culturalObservances = [
+    {
+      name: "Jur Sital (Mithila New Year)",
+      description: "The traditional Mithila New Year celebration, marking the beginning of the agricultural calendar and a time for family gatherings and rituals."
     },
     {
-      year: "2018",
-      theme: "Women of Mithila",
-      attendees: "2,200+",
-      highlights: "Female artist showcase, gender equality panel, traditional craft demonstrations"
+      name: "Folk King Salhesh Jayanti",
+      description: "Celebration honoring the legendary folk hero Salhesh, an important cultural figure in Maithil folklore and identity."
+    },
+    {
+      name: "Art & Heritage Week",
+      description: "Multi-day programming featuring exhibitions, workshops, and cultural events bringing together the global Maithil community."
     }
   ];
 
@@ -72,8 +109,10 @@ const Festival = () => {
             <h1 className="font-playfair text-5xl md:text-6xl font-bold text-foreground mb-6">
               Mithila Festival <span className="gradient-text-primary">USA</span>
             </h1>
-            <p className="text-xl text-muted-foreground">
-              The largest celebration of Maithil culture, art, and heritage in North America.
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              The largest celebration of Maithil culture, art, and heritage in North America. 
+              Held annually in April around Mithila New Year (Jur Sital) and Folk King Salhesh Jayanti, 
+              drawing participation from dignitaries, ambassadors, UN officials, and elected representatives.
             </p>
           </div>
         </div>
@@ -91,7 +130,7 @@ const Festival = () => {
               />
               <div className="absolute inset-0 bg-gradient-overlay flex items-end p-8">
                 <div>
-                  <p className="text-white/80 text-sm uppercase tracking-wider mb-2">Coming 2024</p>
+                  <p className="text-white/80 text-sm uppercase tracking-wider mb-2">6th Annual Festival 2025</p>
                   <p className="text-white font-playfair text-2xl font-semibold">
                     Join us for a celebration of heritage, community, and artistic excellence
                   </p>
@@ -102,82 +141,77 @@ const Festival = () => {
         </div>
       </section>
 
-      {/* Event Details */}
+      {/* Festival Overview */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            <div>
-              <h2 className="font-playfair text-4xl font-bold text-foreground mb-6">
-                Experience Mithila Culture
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Every year, the Mithila Festival USA brings together thousands of community members, 
-                artists, scholars, and culture enthusiasts for a weekend of art, music, food, and 
-                celebration. It's the premier event for experiencing the rich heritage of the Mithila region.
-              </p>
-              
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <Calendar className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-foreground">Annual Event</p>
-                    <p className="text-muted-foreground text-sm">Typically held in late summer/early fall</p>
-                  </div>
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <h2 className="font-playfair text-4xl font-bold text-foreground mb-6">
+              Experience Mithila Culture
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Every year, the Mithila Festival USA brings together thousands of community members, 
+              artists, scholars, and culture enthusiasts for a weekend of art, music, food, and 
+              celebration. The festival has grown into a multi-day hybrid program (virtual and in-person) 
+              hosted at Diversity Plaza in Jackson Heights, other New York venues, and online platforms.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {festivalHighlights.map((item, index) => (
+              <div key={index} className="glass-card rounded-2xl p-6 group hover:shadow-elevated transition-all">
+                <div className="w-12 h-12 rounded-lg bg-gradient-sindoor flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <item.icon className="w-6 h-6 text-primary-foreground" />
                 </div>
-                
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-secondary" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-foreground">Location</p>
-                    <p className="text-muted-foreground text-sm">Rotating venues across major US cities</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
-                    <Users className="w-6 h-6 text-accent-foreground" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-foreground">Attendance</p>
-                    <p className="text-muted-foreground text-sm">2,000-3,000 participants annually</p>
-                  </div>
-                </div>
+                <h3 className="font-playfair text-lg font-semibold text-foreground mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {item.description}
+                </p>
               </div>
-            </div>
-            
-            {/* Highlights Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {festivalHighlights.map((item, index) => (
-                <div key={index} className="glass-card rounded-xl p-6 text-center group hover:shadow-elevated transition-all">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-sindoor mx-auto flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <item.icon className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <h3 className="font-playfair font-semibold text-foreground mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs text-muted-foreground">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Past Festivals */}
+      {/* Cultural Observances */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="font-playfair text-4xl font-bold text-foreground text-center mb-16">
-            Festival History
+          <h2 className="font-playfair text-4xl font-bold text-foreground text-center mb-12">
+            Cultural Observances
           </h2>
           
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {culturalObservances.map((observance, index) => (
+              <div key={index} className="glass-card rounded-2xl p-8 text-center">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <Star className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="font-playfair text-xl font-semibold text-foreground mb-3">
+                  {observance.name}
+                </h3>
+                <p className="text-muted-foreground text-sm">
+                  {observance.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Festival History */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="font-playfair text-4xl font-bold text-foreground text-center mb-6">
+            Festival History
+          </h2>
+          <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-16">
+            Since 2019, each Mithila Festival USA has focused on specific SDG themes while 
+            celebrating traditional Maithil cultural observances.
+          </p>
+          
           <div className="max-w-4xl mx-auto space-y-6">
-            {pastFestivals.map((festival, index) => (
+            {festivalHistory.map((festival, index) => (
               <div key={index} className="glass-card rounded-2xl p-6 flex flex-col md:flex-row md:items-center gap-6">
                 <div className="flex-shrink-0">
                   <div className="w-20 h-20 rounded-xl bg-gradient-sindoor flex items-center justify-center">
@@ -194,12 +228,76 @@ const Festival = () => {
                     {festival.highlights}
                   </p>
                   <div className="flex items-center gap-2 text-primary">
-                    <Users className="w-4 h-4" />
-                    <span className="text-sm font-medium">{festival.attendees} Attendees</span>
+                    <MapPin className="w-4 h-4" />
+                    <span className="text-sm font-medium">{festival.location}</span>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Event Details */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="font-playfair text-3xl font-bold text-foreground mb-6">
+                  Join the Celebration
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-8">
+                  The festival draws participation from dignitaries, ambassadors, UN officials, 
+                  and elected representatives, making it a premier platform for cultural diplomacy 
+                  and community engagement.
+                </p>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <Calendar className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground">When</p>
+                      <p className="text-muted-foreground text-sm">April annually (around Jur Sital)</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+                      <MapPin className="w-6 h-6 text-secondary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground">Where</p>
+                      <p className="text-muted-foreground text-sm">Diversity Plaza, Jackson Heights, Queens & Virtual</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
+                      <Users className="w-6 h-6 text-accent-foreground" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground">Attendance</p>
+                      <p className="text-muted-foreground text-sm">2,000-3,000+ participants annually</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Image Placeholder */}
+              <div className="aspect-square bg-muted rounded-2xl overflow-hidden relative">
+                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/10 to-accent/10">
+                  <div className="text-center p-8">
+                    <Heart className="w-16 h-16 text-primary/30 mx-auto mb-4" />
+                    <p className="text-muted-foreground font-inter">
+                      [Festival Community Gathering Image Placeholder]
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -220,11 +318,20 @@ const Festival = () => {
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-              <div key={item} className={`aspect-square bg-muted rounded-xl overflow-hidden relative ${item > 4 ? 'hidden md:block' : ''}`}>
+            {[
+              "Opening Ceremony",
+              "Art Exhibition",
+              "Kids Workshop",
+              "Cultural Performance",
+              "Taste of Mithila",
+              "Award Ceremony",
+              "Community Gathering",
+              "Artist Demonstration"
+            ].map((item, index) => (
+              <div key={index} className={`aspect-square bg-muted rounded-xl overflow-hidden relative`}>
                 <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 to-accent/5">
-                  <p className="text-muted-foreground text-sm font-inter">
-                    [Festival Photo {item}]
+                  <p className="text-muted-foreground text-xs font-inter text-center px-2">
+                    [{item}]
                   </p>
                 </div>
               </div>
@@ -234,23 +341,24 @@ const Festival = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-sindoor text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full mb-6">
-            <Star className="w-4 h-4 text-accent-foreground" />
-            <span className="text-sm font-medium text-accent-foreground">Don't Miss Out</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-foreground/20 rounded-full mb-6">
+            <Star className="w-4 h-4" />
+            <span className="text-sm font-medium">Don't Miss Out</span>
           </div>
-          <h2 className="font-playfair text-3xl font-bold text-foreground mb-6">
+          <h2 className="font-playfair text-3xl font-bold mb-6">
             Join Us at the Next Festival
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Stay updated on festival dates, volunteer opportunities, and ways to participate.
+          <p className="text-lg opacity-90 max-w-2xl mx-auto mb-8">
+            Stay updated on festival dates, volunteer opportunities, sponsorship packages, 
+            and ways to participate in this celebration of Maithil heritage.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg">
+            <Button asChild size="lg" variant="secondary" className="bg-background text-primary hover:bg-background/90">
               <Link to="/contact">Get Notified</Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
               <Link to="/contact">Become a Sponsor</Link>
             </Button>
           </div>

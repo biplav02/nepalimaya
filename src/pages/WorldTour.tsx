@@ -2,68 +2,82 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Globe, MapPin, Calendar, Users, ExternalLink } from 'lucide-react';
+import { Globe, MapPin, Calendar, Users, ExternalLink, Star, Plane, Building, Handshake } from 'lucide-react';
 
 const WorldTour = () => {
-  const tourLocations = [
+  const worldTour2025 = {
+    title: "Art for SDGs: The Mithila Heritage – World Tour 2025",
+    description: "A traveling exhibition series anchored in SDG themes, starting with programs in New York and expanding to other locations worldwide. The tour features Master Artist S.C. Suman and curated Mithila artworks aligned with SDG 15: Life on Land.",
+    goals: [
+      "Present Mithila art and SDG-themed exhibitions in different cities and countries",
+      "Collaborate with embassies, cultural centers, and diaspora organizations",
+      "Offer workshops, talks, and youth activities alongside exhibitions",
+      "Deepen understanding of both Mithila culture and global development goals",
+      "Build long-term partnerships with museums and universities"
+    ]
+  };
+
+  const tourConcept = [
     {
-      region: "North America",
-      locations: [
-        { city: "New York, USA", venue: "United Nations Headquarters", year: "2023" },
-        { city: "Washington DC, USA", venue: "Smithsonian Institution", year: "2022" },
-        { city: "Los Angeles, USA", venue: "LACMA", year: "2021" },
-        { city: "Toronto, Canada", venue: "Royal Ontario Museum", year: "2020" }
-      ]
+      icon: Globe,
+      title: "Global Exhibitions",
+      description: "Presenting Mithila art in major cities worldwide, bringing traditional artwork to new audiences and cultural contexts."
     },
     {
-      region: "Europe",
-      locations: [
-        { city: "London, UK", venue: "British Museum", year: "2023" },
-        { city: "Paris, France", venue: "UNESCO Headquarters", year: "2022" },
-        { city: "Geneva, Switzerland", venue: "UN Geneva", year: "2021" },
-        { city: "Berlin, Germany", venue: "Ethnological Museum", year: "2019" }
-      ]
+      icon: Handshake,
+      title: "Embassy Partnerships",
+      description: "Collaborating with embassies, consulates, and diplomatic missions to leverage cultural diplomacy networks."
     },
     {
-      region: "Asia",
-      locations: [
-        { city: "Kathmandu, Nepal", venue: "National Art Gallery", year: "2023" },
-        { city: "New Delhi, India", venue: "National Gallery of Modern Art", year: "2022" },
-        { city: "Tokyo, Japan", venue: "Tokyo National Museum", year: "2019" },
-        { city: "Singapore", venue: "Asian Civilisations Museum", year: "2018" }
-      ]
+      icon: Users,
+      title: "Diaspora Engagement",
+      description: "Connecting with Maithil and South Asian diaspora communities across different countries for cultural programming."
     },
     {
-      region: "Australia & Oceania",
-      locations: [
-        { city: "Sydney, Australia", venue: "Art Gallery of NSW", year: "2022" },
-        { city: "Melbourne, Australia", venue: "National Gallery of Victoria", year: "2020" }
-      ]
+      icon: Building,
+      title: "Institutional Collaborations",
+      description: "Partnering with museums, universities, and cultural centers to integrate Mithila art into global dialogues."
     }
   ];
 
-  const upcomingEvents = [
+  const featuredEvents = [
     {
-      title: "Mithila Art: Voices of Women",
-      location: "Vienna, Austria",
-      venue: "UN Vienna",
-      date: "March 2024",
-      description: "Exhibition highlighting female Mithila artists and gender themes"
+      title: "World Tour Exhibition featuring Master Artist S.C. Suman",
+      date: "May 15, 2025",
+      location: "New York City",
+      description: "Curated Mithila artworks aligned with SDG 15: Life on Land, featuring works by renowned Master Artist S.C. Suman.",
+      type: "Exhibition"
     },
     {
-      title: "SDG Art Exhibition",
-      location: "Nairobi, Kenya",
-      venue: "UN Habitat",
-      date: "June 2024",
-      description: "Connecting Mithila art to African sustainable development initiatives"
+      title: "6th Annual Mithila Festival USA",
+      date: "April 2025",
+      location: "Diversity Plaza, Jackson Heights",
+      description: "Annual festival celebration with World Tour preview, featuring workshops, performances, and community programming.",
+      type: "Festival"
     },
     {
-      title: "Cultural Heritage Festival",
-      location: "Dubai, UAE",
-      venue: "Expo City Dubai",
-      date: "October 2024",
-      description: "Part of global cultural heritage celebration"
+      title: "Art for SDGs Workshop Series",
+      date: "2025 (Multiple Dates)",
+      location: "Various Locations",
+      description: "Educational workshops connecting Mithila painting techniques with SDG themes for diverse audiences.",
+      type: "Workshop"
     }
+  ];
+
+  const futureDestinations = [
+    { city: "Washington D.C.", country: "USA", status: "Planning" },
+    { city: "London", country: "UK", status: "In Discussion" },
+    { city: "Toronto", country: "Canada", status: "In Discussion" },
+    { city: "Kathmandu", country: "Nepal", status: "Partnership Active" },
+    { city: "New Delhi", country: "India", status: "In Discussion" },
+    { city: "Geneva", country: "Switzerland", status: "Exploring" }
+  ];
+
+  const impactGoals = [
+    { value: "10+", label: "Cities Targeted" },
+    { value: "5+", label: "Countries" },
+    { value: "50,000+", label: "Expected Visitors" },
+    { value: "100+", label: "Artworks Toured" }
   ];
 
   return (
@@ -77,29 +91,104 @@ const WorldTour = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 rounded-full mb-6">
               <Globe className="w-4 h-4 text-secondary animate-spin" style={{ animationDuration: '10s' }} />
-              <span className="text-sm font-medium text-secondary">Global Reach</span>
+              <span className="text-sm font-medium text-secondary">Global Outreach</span>
             </div>
             <h1 className="font-playfair text-5xl md:text-6xl font-bold text-foreground mb-6">
-              World <span className="gradient-text-cultural">Tour</span>
+              Global & World <span className="gradient-text-cultural">Tour</span>
             </h1>
-            <p className="text-xl text-muted-foreground">
-              Bringing Mithila art and culture to museums, galleries, and cultural institutions 
-              around the world.
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              To extend our impact beyond New York, Mithila Center USA is leading a global touring 
+              initiative that brings Mithila art and SDG-themed exhibitions to audiences worldwide.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Stats */}
+      {/* World Tour 2025 Feature */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="glass-card rounded-3xl p-8 md:p-12">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="px-4 py-2 bg-primary/10 rounded-full">
+                  <span className="text-sm font-medium text-primary">Featured Initiative</span>
+                </div>
+                <div className="px-4 py-2 bg-accent/20 rounded-full">
+                  <span className="text-sm font-medium text-accent-foreground">2025</span>
+                </div>
+              </div>
+              
+              <h2 className="font-playfair text-3xl font-bold text-foreground mb-4">
+                {worldTour2025.title}
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                {worldTour2025.description}
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="font-semibold text-foreground mb-4">Tour Objectives</h3>
+                  <ul className="space-y-3">
+                    {worldTour2025.goals.map((goal, index) => (
+                      <li key={index} className="flex items-start gap-3 text-muted-foreground">
+                        <Star className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                        {goal}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                {/* Image Placeholder */}
+                <div className="aspect-[4/3] bg-muted rounded-xl overflow-hidden relative">
+                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-secondary/5 to-primary/5">
+                    <div className="text-center p-8">
+                      <Plane className="w-12 h-12 text-secondary/30 mx-auto mb-4" />
+                      <p className="text-muted-foreground font-inter">
+                        [World Tour Promotional Image Placeholder]
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tour Concept */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="font-playfair text-4xl font-bold text-foreground text-center mb-6">
+            The Global Tour Concept
+          </h2>
+          <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-16">
+            Our touring initiative goes beyond exhibitions to create comprehensive cultural 
+            experiences that educate, inspire, and connect communities worldwide.
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {tourConcept.map((item, index) => (
+              <div key={index} className="glass-card rounded-2xl p-6 text-center group hover:shadow-elevated transition-all">
+                <div className="w-14 h-14 rounded-xl bg-gradient-peacock mx-auto flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <item.icon className="w-7 h-7 text-secondary-foreground" />
+                </div>
+                <h3 className="font-playfair text-lg font-semibold text-foreground mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Impact Goals */}
       <section className="py-12 border-y border-border">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center max-w-4xl mx-auto">
-            {[
-              { value: "50+", label: "Countries Visited" },
-              { value: "100+", label: "Exhibitions" },
-              { value: "500K+", label: "Visitors Reached" },
-              { value: "6", label: "Continents" }
-            ].map((stat, index) => (
+            {impactGoals.map((stat, index) => (
               <div key={index}>
                 <div className="font-playfair text-3xl md:text-4xl font-bold text-primary mb-1">
                   {stat.value}
@@ -107,6 +196,79 @@ const WorldTour = () => {
                 <div className="text-sm text-muted-foreground">
                   {stat.label}
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Events */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="font-playfair text-4xl font-bold text-foreground text-center mb-12">
+            Featured 2025 Events
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {featuredEvents.map((event, index) => (
+              <div key={index} className="glass-card rounded-2xl p-6 group hover:shadow-elevated transition-all">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium">
+                    {event.type}
+                  </span>
+                </div>
+                <h3 className="font-playfair text-lg font-semibold text-foreground mb-3">
+                  {event.title}
+                </h3>
+                <div className="space-y-2 text-sm text-muted-foreground mb-4">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-4 h-4 text-primary" />
+                    {event.date}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-4 h-4 text-primary" />
+                    {event.location}
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  {event.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Future Destinations */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="font-playfair text-4xl font-bold text-foreground text-center mb-6">
+            Future Destinations
+          </h2>
+          <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
+            We're actively building partnerships to bring Mithila art to new cities and countries, 
+            collaborating with embassies, cultural centers, and diaspora communities.
+          </p>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
+            {futureDestinations.map((destination, index) => (
+              <div key={index} className="glass-card rounded-xl p-4 text-center group hover:bg-secondary/5 transition-colors">
+                <Globe className="w-8 h-8 text-secondary mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                <h3 className="font-playfair font-semibold text-foreground text-sm">
+                  {destination.city}
+                </h3>
+                <p className="text-xs text-muted-foreground mb-2">
+                  {destination.country}
+                </p>
+                <span className={`text-xs px-2 py-1 rounded-full ${
+                  destination.status === 'Partnership Active' 
+                    ? 'bg-green-100 text-green-700' 
+                    : destination.status === 'Planning'
+                    ? 'bg-blue-100 text-blue-700'
+                    : 'bg-gray-100 text-gray-600'
+                }`}>
+                  {destination.status}
+                </span>
               </div>
             ))}
           </div>
@@ -128,7 +290,7 @@ const WorldTour = () => {
                   [Interactive World Map Placeholder]
                 </p>
                 <p className="text-sm text-muted-foreground mt-2">
-                  Showing exhibition locations across 50+ countries
+                  Showing tour locations and planned destinations
                 </p>
               </div>
             </div>
@@ -136,72 +298,7 @@ const WorldTour = () => {
         </div>
       </section>
 
-      {/* Tour Locations by Region */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="font-playfair text-4xl font-bold text-foreground text-center mb-16">
-            Exhibition History
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {tourLocations.map((region, index) => (
-              <div key={index} className="glass-card rounded-2xl p-8">
-                <h3 className="font-playfair text-2xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                  <Globe className="w-6 h-6 text-primary" />
-                  {region.region}
-                </h3>
-                <div className="space-y-4">
-                  {region.locations.map((loc, locIndex) => (
-                    <div key={locIndex} className="flex items-start gap-4 pb-4 border-b border-border last:border-0 last:pb-0">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-5 h-5 text-primary" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground">{loc.city}</p>
-                        <p className="text-sm text-muted-foreground">{loc.venue}</p>
-                        <p className="text-xs text-primary">{loc.year}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Upcoming Events */}
-      <section className="py-20 bg-gradient-sindoor text-primary-foreground">
-        <div className="container mx-auto px-4">
-          <h2 className="font-playfair text-4xl font-bold text-center mb-12">
-            Upcoming Events
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {upcomingEvents.map((event, index) => (
-              <div key={index} className="bg-background/10 backdrop-blur-sm rounded-2xl p-6 border border-primary-foreground/20">
-                <div className="flex items-center gap-2 mb-4">
-                  <Calendar className="w-4 h-4 opacity-80" />
-                  <span className="text-sm opacity-80">{event.date}</span>
-                </div>
-                <h3 className="font-playfair text-xl font-semibold mb-2">
-                  {event.title}
-                </h3>
-                <p className="text-sm opacity-80 mb-1">
-                  <MapPin className="w-4 h-4 inline mr-1" />
-                  {event.location}
-                </p>
-                <p className="text-sm opacity-70 mb-4">{event.venue}</p>
-                <p className="text-sm opacity-90">
-                  {event.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery Preview */}
+      {/* Tour Gallery */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="font-playfair text-4xl font-bold text-foreground text-center mb-12">
@@ -209,11 +306,18 @@ const WorldTour = () => {
           </h2>
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div key={item} className="aspect-[4/3] bg-muted rounded-xl overflow-hidden relative group">
+            {[
+              "Master Artist S.C. Suman",
+              "Exhibition Setup",
+              "Opening Ceremony",
+              "Visitor Engagement",
+              "Workshop Session",
+              "Cultural Performance"
+            ].map((item, index) => (
+              <div key={index} className="aspect-[4/3] bg-muted rounded-xl overflow-hidden relative group">
                 <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-secondary/5 to-primary/5">
-                  <p className="text-muted-foreground text-sm font-inter">
-                    [Exhibition Photo {item}]
+                  <p className="text-muted-foreground text-sm font-inter text-center px-4">
+                    [{item} Photo]
                   </p>
                 </div>
                 <div className="absolute inset-0 bg-foreground/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -232,18 +336,24 @@ const WorldTour = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-gradient-peacock text-secondary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-playfair text-3xl font-bold text-foreground mb-6">
+          <Plane className="w-16 h-16 mx-auto mb-6 opacity-80" />
+          <h2 className="font-playfair text-3xl font-bold mb-6">
             Host an Exhibition
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Interested in bringing Mithila art to your museum, gallery, or cultural institution? 
-            We'd love to discuss collaboration opportunities.
+          <p className="text-lg opacity-90 max-w-2xl mx-auto mb-8">
+            Interested in bringing Mithila art to your museum, gallery, embassy, or cultural institution? 
+            We'd love to discuss collaboration opportunities for the World Tour.
           </p>
-          <Button asChild size="lg">
-            <Link to="/contact">Contact Us</Link>
-          </Button>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button asChild size="lg" variant="secondary" className="bg-background text-secondary hover:bg-background/90">
+              <Link to="/contact">Partner With Us</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground/10">
+              <Link to="/art-for-sdgs">Learn About Art for SDGs</Link>
+            </Button>
+          </div>
         </div>
       </section>
 

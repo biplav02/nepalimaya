@@ -5,7 +5,8 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
-import { Mail, Phone, MapPin, Clock, Heart, Users, Building, Send } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Mail, Phone, MapPin, Clock, Heart, Users, Building, Send, Palette, GraduationCap, Globe, Calendar } from 'lucide-react';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -40,13 +41,13 @@ const Contact = () => {
     },
     {
       icon: MapPin,
-      title: "Address",
-      details: "123 Cultural Center Drive, New York, NY 10001",
+      title: "Location",
+      details: "New York, NY (Serving the Tri-State Area & Beyond)",
       link: "#"
     },
     {
       icon: Clock,
-      title: "Hours",
+      title: "Office Hours",
       details: "Mon-Fri: 9AM-5PM EST",
       link: "#"
     }
@@ -56,17 +57,50 @@ const Contact = () => {
     {
       icon: Heart,
       title: "Donate",
-      description: "Support our mission with a tax-deductible donation. Every contribution helps preserve this ancient heritage."
+      description: "Support our mission with a tax-deductible donation. Every contribution helps preserve this ancient heritage and fund programs like the Museum of Mithila Heritage."
     },
     {
       icon: Users,
       title: "Volunteer",
-      description: "Join our team of dedicated volunteers for events, workshops, and community outreach programs."
+      description: "Join our team of dedicated volunteers for festivals, workshops, exhibitions, and community outreach programs throughout the year."
     },
     {
       icon: Building,
       title: "Partner",
-      description: "Explore institutional partnerships for exhibitions, educational programs, and cultural exchanges."
+      description: "Explore institutional partnerships for exhibitions, educational programs, cultural exchanges, and World Tour collaborations."
+    },
+    {
+      icon: Palette,
+      title: "Submit Art",
+      description: "Are you a Mithila artist? Share your work for potential inclusion in our exhibitions, gallery, and programs."
+    },
+    {
+      icon: GraduationCap,
+      title: "Request Program",
+      description: "Bring Mithila art workshops, educational programs, or exhibitions to your school, organization, or community."
+    },
+    {
+      icon: Globe,
+      title: "Host Exhibition",
+      description: "Interested in hosting Art for SDGs exhibitions at your museum, gallery, or cultural institution? Let's discuss."
+    }
+  ];
+
+  const upcomingOpportunities = [
+    {
+      title: "6th Annual Mithila Festival USA",
+      date: "April 2025",
+      type: "Festival Volunteer"
+    },
+    {
+      title: "World Tour 2025",
+      date: "Throughout 2025",
+      type: "Exhibition Support"
+    },
+    {
+      title: "Kids Workshop Series",
+      date: "Monthly",
+      type: "Teaching Assistant"
     }
   ];
 
@@ -81,8 +115,9 @@ const Contact = () => {
             <h1 className="font-playfair text-5xl md:text-6xl font-bold text-foreground mb-6">
               Get <span className="gradient-text-primary">Involved</span>
             </h1>
-            <p className="text-xl text-muted-foreground">
-              Connect with us to learn more, support our mission, or explore collaboration opportunities.
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Connect with Mithila Center USA to learn more about our programs, support our mission, 
+              explore partnership opportunities, or join our growing community of heritage advocates.
             </p>
           </div>
         </div>
@@ -131,7 +166,7 @@ const Contact = () => {
                   <Input
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    placeholder="How can we help?"
+                    placeholder="Partnership inquiry, volunteer interest, program request..."
                     required
                   />
                 </div>
@@ -143,7 +178,7 @@ const Contact = () => {
                   <Textarea
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Tell us more about your inquiry..."
+                    placeholder="Tell us how you'd like to get involved or what you'd like to learn more about..."
                     rows={5}
                     required
                   />
@@ -186,6 +221,9 @@ const Contact = () => {
                 <h3 className="font-playfair text-lg font-semibold text-foreground mb-4">
                   Follow Us
                 </h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Stay connected with our latest exhibitions, festivals, and community events.
+                </p>
                 <div className="flex gap-3">
                   {['Facebook', 'Instagram', 'Twitter', 'YouTube'].map((platform) => (
                     <a
@@ -198,6 +236,24 @@ const Contact = () => {
                   ))}
                 </div>
               </div>
+
+              {/* Upcoming Volunteer Opportunities */}
+              <div className="glass-card rounded-2xl p-6">
+                <h3 className="font-playfair text-lg font-semibold text-foreground mb-4">
+                  Volunteer Opportunities
+                </h3>
+                <div className="space-y-3">
+                  {upcomingOpportunities.map((opp, index) => (
+                    <div key={index} className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+                      <Calendar className="w-5 h-5 text-primary flex-shrink-0" />
+                      <div className="flex-grow">
+                        <p className="text-sm font-medium text-foreground">{opp.title}</p>
+                        <p className="text-xs text-muted-foreground">{opp.date} • {opp.type}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -206,11 +262,15 @@ const Contact = () => {
       {/* Engagement Options */}
       <section className="py-20 bg-muted/30 mithila-pattern">
         <div className="container mx-auto px-4">
-          <h2 className="font-playfair text-4xl font-bold text-foreground text-center mb-12">
+          <h2 className="font-playfair text-4xl font-bold text-foreground text-center mb-6">
             Ways to Engage
           </h2>
+          <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
+            There are many ways to support our mission and become part of the 
+            Mithila heritage preservation movement.
+          </p>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {engagementOptions.map((option, index) => (
               <div key={index} className="glass-card rounded-2xl p-8 text-center group hover:shadow-elevated transition-all">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-sindoor mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
@@ -236,7 +296,10 @@ const Contact = () => {
               <div className="text-center">
                 <MapPin className="w-16 h-16 text-muted-foreground/30 mx-auto mb-4" />
                 <p className="text-muted-foreground font-inter">
-                  [Google Maps Integration Placeholder]
+                  [Location Map - New York City Area]
+                </p>
+                <p className="text-sm text-muted-foreground mt-2">
+                  Serving the Tri-State Area with programs across NYC, Queens, and beyond
                 </p>
               </div>
             </div>
@@ -248,11 +311,13 @@ const Contact = () => {
       <section className="py-20 bg-gradient-sindoor text-primary-foreground">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
+            <Mail className="w-16 h-16 mx-auto mb-6 opacity-80" />
             <h2 className="font-playfair text-3xl font-bold mb-4">
               Stay Connected
             </h2>
             <p className="opacity-90 mb-8">
-              Subscribe to our newsletter for updates on events, exhibitions, and ways to get involved.
+              Subscribe to our newsletter for updates on festivals, exhibitions, workshops, 
+              World Tour events, and ways to get involved with Mithila Center USA.
             </p>
             <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <Input

@@ -2,30 +2,59 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, MapPin, Calendar, Users, Target } from 'lucide-react';
+import { ArrowRight, MapPin, Calendar, Users, Target, Globe, Heart, Building, Sparkles } from 'lucide-react';
 
 const About = () => {
   const timeline = [
     {
       year: "Ancient Origins",
       title: "Birth of Mithila Art",
-      description: "Mithila painting tradition begins in the ancient kingdom of Mithila, spanning present-day Nepal and Bihar, India. Legend traces it to King Janaka's court during the wedding of Sita and Rama."
+      description: "Mithila painting tradition begins in the ancient kingdom of Mithila, spanning present-day Nepal and Bihar, India. Legend traces it to King Janaka's court during the wedding of Sita and Rama, making it over 3,000 years old."
     },
     {
       year: "1934",
       title: "Global Discovery",
-      description: "Following a major earthquake, British colonial officer William G. Archer discovers Mithila paintings on exposed walls, bringing international attention to this art form."
+      description: "Following a major earthquake, British colonial officer William G. Archer discovers Mithila paintings on exposed walls, bringing international attention to this art form and sparking academic interest worldwide."
     },
     {
-      year: "2003",
-      title: "Foundation Established",
-      description: "Mithila Center USA is founded to preserve, promote, and practice Maithil arts and culture in America, creating a bridge between diaspora communities and their heritage."
+      year: "2019",
+      title: "Mithila Festival USA Launched",
+      description: "The inaugural Mithila Festival USA is organized, along with the groundbreaking exhibition 'Art for SDGs: The Mithila Heritage' at UN Headquarters in New York, in collaboration with the Permanent Mission of Nepal."
     },
     {
       year: "Present",
-      title: "Global Impact",
-      description: "Today, the center works with UN agencies, diplomatic missions, and educational institutions worldwide, using Mithila art as a tool for sustainable development and cultural diplomacy."
+      title: "Global Cultural Force",
+      description: "Today, Mithila Center USA works with UN agencies, diplomatic missions, NYC Mayor's Office, Queens Borough Hall, and educational institutions worldwide, using Mithila art as a tool for sustainable development and cultural diplomacy."
     }
+  ];
+
+  const keyFacts = [
+    {
+      icon: MapPin,
+      title: "Location",
+      description: "Based in New York, USA, with cultural connections spanning Nepal, India, and the global Maithil diaspora across North America and beyond."
+    },
+    {
+      icon: Calendar,
+      title: "Established",
+      description: "Organizing major cultural programs since 2019, including annual festivals, UN exhibitions, and community events as a registered 501(c)(3) non-profit."
+    },
+    {
+      icon: Target,
+      title: "Focus Areas",
+      description: "Art preservation, cultural education, UN SDG alignment, artist empowerment, and cross-cultural dialogue through festivals, exhibitions, and workshops."
+    }
+  ];
+
+  const partners = [
+    "Permanent Mission of Nepal to UN",
+    "Consulate General of Nepal, New York",
+    "NYC Mayor's Office",
+    "Queens Borough Hall",
+    "Flushing Town Hall",
+    "Apan Foundation",
+    "Nepalese American Foundation",
+    "Madheshi/Terai Diaspora Associations"
   ];
 
   return (
@@ -40,14 +69,14 @@ const About = () => {
               About <span className="gradient-text-primary">Mithila Center USA</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              A non-profit organization dedicated to preserving the rich cultural heritage of the Mithila region 
-              while making it relevant for contemporary global challenges.
+              A nonprofit cultural organization based in New York, dedicated to preserving, promoting, and 
+              globalizing the living heritage of the Mithila region of southern Nepal and northern India.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Image Placeholder + Content */}
+      {/* Main Story Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -59,7 +88,7 @@ const About = () => {
                     <Users className="w-12 h-12 text-primary" />
                   </div>
                   <p className="text-muted-foreground font-inter">
-                    [Team/Community Image Placeholder]
+                    [Community Gathering / Festival Image Placeholder]
                   </p>
                 </div>
               </div>
@@ -71,9 +100,16 @@ const About = () => {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  The Mithila Center USA was established by a passionate group of Maithil diaspora members 
-                  who recognized the urgent need to preserve their ancestral art and culture in a rapidly 
-                  globalizing world.
+                  Mithila Center USA (also known as Mithila Art & Culture Center) was established by 
+                  a passionate group of Maithil diaspora members who recognized the urgent need to 
+                  preserve their ancestral art and culture in a rapidly globalizing world.
+                </p>
+                <p>
+                  Through festivals, exhibitions, educational programs, and international collaborations, 
+                  the Center uses art and culture as a bridge between communities and as a platform for 
+                  social impact. Since 2019, we have been organizing the Mithila Festival USA, major art 
+                  exhibitions, and community events that bring together artists, scholars, diaspora 
+                  communities, and global audiences.
                 </p>
                 <p>
                   Mithila art, also known as Madhubani painting, is one of the oldest art forms in the world, 
@@ -82,8 +118,9 @@ const About = () => {
                   and distinctive geometric patterns.
                 </p>
                 <p>
-                  Today, we work to ensure this living heritage not only survives but thrives, adapting to 
-                  contemporary contexts while maintaining its authentic roots.
+                  Our flagship program, <strong>"Art for SDGs: The Mithila Heritage,"</strong> connects traditional 
+                  Mithila/Madhubani art with the United Nations Sustainable Development Goals (SDGs), positioning 
+                  culture as a driver for global awareness and change.
                 </p>
               </div>
               <Button asChild className="mt-6 gap-2">
@@ -97,8 +134,60 @@ const About = () => {
         </div>
       </section>
 
+      {/* What We Do Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <h2 className="font-playfair text-4xl font-bold text-foreground mb-6">
+              What We Do
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              We bridge ancient artistic traditions with contemporary global challenges through 
+              multiple interconnected programs.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                icon: Sparkles,
+                title: "Festivals & Events",
+                description: "Annual Mithila Festival USA celebrating Jur Sital, Folk King Salhesh Jayanti, and Maithil cultural traditions."
+              },
+              {
+                icon: Globe,
+                title: "UN & Diplomatic Engagement",
+                description: "Exhibitions at UN Headquarters, partnerships with Permanent Mission of Nepal, and cultural diplomacy initiatives."
+              },
+              {
+                icon: Heart,
+                title: "Artist Empowerment",
+                description: "Supporting women and youth artists through workshops, recognition programs, and economic opportunities."
+              },
+              {
+                icon: Building,
+                title: "Community Programs",
+                description: "Kids workshops, art competitions, expert panels, and educational programs connecting generations."
+              }
+            ].map((item, index) => (
+              <div key={index} className="glass-card rounded-2xl p-6 text-center group hover:shadow-elevated transition-all">
+                <div className="w-14 h-14 rounded-xl bg-gradient-sindoor mx-auto flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <item.icon className="w-7 h-7 text-primary-foreground" />
+                </div>
+                <h3 className="font-playfair text-lg font-semibold text-foreground mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Timeline */}
-      <section className="py-20 bg-muted/30 mithila-pattern">
+      <section className="py-20 mithila-pattern">
         <div className="container mx-auto px-4">
           <h2 className="font-playfair text-4xl font-bold text-foreground text-center mb-16">
             Our Journey Through Time
@@ -129,29 +218,84 @@ const About = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="glass-card rounded-2xl p-8 text-center">
-              <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="font-playfair text-xl font-semibold mb-2">Location</h3>
-              <p className="text-muted-foreground">
-                Based in the United States with cultural connections spanning Nepal, India, and the global Maithil diaspora.
-              </p>
-            </div>
+            {keyFacts.map((item, index) => (
+              <div key={index} className="glass-card rounded-2xl p-8 text-center">
+                <item.icon className="w-12 h-12 text-primary mx-auto mb-4" />
+                <h3 className="font-playfair text-xl font-semibold mb-2">{item.title}</h3>
+                <p className="text-muted-foreground">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partners Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="font-playfair text-4xl font-bold text-foreground mb-6">
+              Our Partners & Collaborators
+            </h2>
+            <p className="text-lg text-muted-foreground mb-12">
+              We work with government bodies, cultural institutions, and community organizations 
+              to amplify our impact.
+            </p>
             
-            <div className="glass-card rounded-2xl p-8 text-center">
-              <Calendar className="w-12 h-12 text-secondary mx-auto mb-4" />
-              <h3 className="font-playfair text-xl font-semibold mb-2">Established</h3>
-              <p className="text-muted-foreground">
-                Founded in 2003 as a 501(c)(3) non-profit organization dedicated to cultural preservation.
-              </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {partners.map((partner, index) => (
+                <div key={index} className="glass-card rounded-xl p-4 text-center">
+                  <p className="text-sm font-medium text-foreground">{partner}</p>
+                </div>
+              ))}
             </div>
-            
-            <div className="glass-card rounded-2xl p-8 text-center">
-              <Target className="w-12 h-12 text-accent mx-auto mb-4" />
-              <h3 className="font-playfair text-xl font-semibold mb-2">Focus</h3>
-              <p className="text-muted-foreground">
-                Art preservation, cultural education, sustainable development, and community empowerment.
-              </p>
-            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Image Gallery Placeholder */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="font-playfair text-4xl font-bold text-foreground text-center mb-12">
+            Our Community in Action
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            {[
+              "Festival Celebration",
+              "UN Exhibition",
+              "Kids Workshop",
+              "Artist Recognition"
+            ].map((item, index) => (
+              <div key={index} className="aspect-square bg-muted rounded-xl overflow-hidden relative">
+                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 to-secondary/5">
+                  <p className="text-muted-foreground text-sm font-inter text-center px-4">
+                    [{item} Image Placeholder]
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-gradient-sindoor text-primary-foreground">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="font-playfair text-3xl font-bold mb-6">
+            Join Our Cultural Movement
+          </h2>
+          <p className="text-lg opacity-90 max-w-2xl mx-auto mb-8">
+            Whether through donations, volunteering, or spreading awareness, you can help preserve 
+            this ancient heritage for future generations.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button asChild size="lg" variant="secondary" className="bg-background text-primary hover:bg-background/90">
+              <Link to="/contact">Get Involved</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
+              <Link to="/mission">Our Mission</Link>
+            </Button>
           </div>
         </div>
       </section>
