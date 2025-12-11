@@ -2,59 +2,63 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Award, Star, FileText, Building, Trophy, Medal, Scroll, Crown } from 'lucide-react';
+import { Award, Star, FileText, Building, Trophy, Scroll, Crown, Users, Calendar, MapPin } from 'lucide-react';
 import masterArtist from '@/assets/master-artist.jpg';
 
 const Recognition = () => {
-  const awards = [
+  const proclamations = [
     {
-      year: "2023",
-      title: "Cultural Heritage Preservation Award",
-      organization: "National Endowment for the Arts",
-      description: "Recognizing outstanding contribution to preserving and promoting traditional art forms."
+      entity: "NYC Mayor's Office",
+      type: "Mayoral Proclamation",
+      title: "Mithila Culture and Festival Day",
+      description: "Official proclamation declaring 'Mithila Culture and Festival Day' to celebrate South Asian heritage and recognize the impact of Mithila Festival USA.",
+      year: "Multiple Years",
+      significance: "Citywide recognition of Maithil cultural contributions"
     },
     {
-      year: "2022",
-      title: "Global Cultural Ambassador",
-      organization: "UNESCO",
-      description: "For innovative programs connecting traditional art to sustainable development goals."
-    },
-    {
+      entity: "U.S. Congress",
+      type: "Congressional Proclamation",
+      title: "Honoring Mithila Festival USA",
+      description: "Presented by Congresswoman Grace Meng during the 2021 festival, honoring Mithila Festival USA and acknowledging its contribution to cultural promotion and community engagement.",
       year: "2021",
-      title: "Community Impact Award",
-      organization: "Asian American Federation",
-      description: "Honoring exemplary service to the Asian American community through cultural programming."
-    },
-    {
-      year: "2020",
-      title: "Excellence in Cultural Diplomacy",
-      organization: "US Department of State",
-      description: "Recognition for fostering international understanding through art and culture."
-    },
-    {
-      year: "2019",
-      title: "Non-Profit Excellence Award",
-      organization: "Foundation Center",
-      description: "For organizational excellence and impactful programming in the cultural sector."
+      significance: "Federal recognition of cultural impact"
     }
   ];
 
-  const proclamations = [
-    { entity: "New York City", type: "Mayoral Proclamation", year: "2023" },
-    { entity: "State of New Jersey", type: "Governor's Citation", year: "2022" },
-    { entity: "City of Los Angeles", type: "City Council Resolution", year: "2021" },
-    { entity: "State of Texas", type: "Senate Resolution", year: "2020" },
-    { entity: "US Congress", type: "Congressional Record Entry", year: "2019" },
-    { entity: "City of Chicago", type: "Mayoral Proclamation", year: "2018" }
+  const officialEvents = [
+    {
+      title: "NYC Mayor's Residence Reception",
+      description: "Official receptions at the NYC Mayor's residence where the Center's cultural and SDG-focused work has been highlighted in front of civic leaders and community organizations.",
+      icon: Building
+    },
+    {
+      title: "Queens Borough Hall Events",
+      description: "Programs and events hosted at Queens Borough Hall, demonstrating local government support for Mithila cultural initiatives and heritage preservation.",
+      icon: Building
+    },
+    {
+      title: "UN Headquarters Exhibitions",
+      description: "Multiple exhibitions at UN Headquarters in partnership with the Permanent Mission of Nepal, positioning Mithila art in global sustainability conversations.",
+      icon: Award
+    }
+  ];
+
+  const partnerships = [
+    { name: "Permanent Mission of Nepal to UN", type: "Diplomatic" },
+    { name: "Consulate General of Nepal, New York", type: "Government" },
+    { name: "Apan Foundation", type: "Foundation" },
+    { name: "Nepalese American Foundation", type: "Community" },
+    { name: "Flushing Town Hall", type: "Cultural Institution" },
+    { name: "Madheshi/Terai Diaspora Associations", type: "Community" }
   ];
 
   const mediaFeatures = [
-    { outlet: "The New York Times", topic: "Feature on Mithila Art Revival", year: "2023" },
-    { outlet: "NPR", topic: "Radio documentary on diaspora artists", year: "2022" },
-    { outlet: "BBC World Service", topic: "Art for SDGs program spotlight", year: "2022" },
-    { outlet: "CNN", topic: "Festival coverage and interview", year: "2021" },
-    { outlet: "National Geographic", topic: "Photo essay on traditional techniques", year: "2020" },
-    { outlet: "The Washington Post", topic: "UN exhibition feature", year: "2019" }
+    { outlet: "Abir Pothi", topic: "Art for SDGs program coverage", type: "Art Media" },
+    { outlet: "NEPYORK", topic: "Mithila Festival USA coverage", type: "Diaspora Media" },
+    { outlet: "enepalese", topic: "Community event features", type: "Diaspora Media" },
+    { outlet: "Patch", topic: "Local community coverage", type: "Local News" },
+    { outlet: "OnlineKhabar", topic: "Cultural programming features", type: "Nepal Media" },
+    { outlet: "Nepalism.com", topic: "SDG and art education coverage", type: "Diaspora Media" }
   ];
 
   return (
@@ -73,9 +77,10 @@ const Recognition = () => {
             <h1 className="font-playfair text-5xl md:text-6xl font-bold text-foreground mb-6">
               Recognition & <span className="gradient-text-primary">Honors</span>
             </h1>
-            <p className="text-xl text-muted-foreground">
-              Awards, proclamations, and recognition from institutions around the world 
-              for our work in cultural preservation and community empowerment.
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Mithila Center USA's work has received growing recognition from government bodies, 
+              cultural institutions, and community organizations, acknowledging our contributions 
+              to cultural preservation and SDG-aligned programming.
             </p>
           </div>
         </div>
@@ -101,32 +106,51 @@ const Recognition = () => {
         </div>
       </section>
 
-      {/* Awards */}
-      <section className="py-20">
+      {/* Major Proclamations */}
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="font-playfair text-4xl font-bold text-foreground text-center mb-16">
-            Awards & Honors
+          <h2 className="font-playfair text-4xl font-bold text-foreground text-center mb-6">
+            Government Proclamations
           </h2>
+          <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-16">
+            Official recognition from federal, state, and city governments acknowledging 
+            our contributions to cultural preservation and community empowerment.
+          </p>
           
-          <div className="max-w-4xl mx-auto space-y-6">
-            {awards.map((award, index) => (
-              <div key={index} className="glass-card rounded-2xl p-8 flex flex-col md:flex-row gap-6 group hover:shadow-elevated transition-all">
-                <div className="flex-shrink-0">
-                  <div className="w-20 h-20 rounded-xl bg-gradient-haldi flex items-center justify-center">
-                    <Award className="w-10 h-10 text-accent-foreground" />
+          <div className="max-w-4xl mx-auto space-y-8">
+            {proclamations.map((proc, index) => (
+              <div key={index} className="glass-card rounded-3xl p-8 md:p-10">
+                <div className="grid md:grid-cols-3 gap-8">
+                  <div className="md:col-span-2">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-14 h-14 rounded-xl bg-gradient-haldi flex items-center justify-center">
+                        <Scroll className="w-7 h-7 text-accent-foreground" />
+                      </div>
+                      <div>
+                        <span className="text-sm text-primary font-medium">{proc.year}</span>
+                        <h3 className="font-playfair text-xl font-semibold text-foreground">
+                          {proc.entity}
+                        </h3>
+                      </div>
+                    </div>
+                    <p className="text-secondary font-medium mb-2">{proc.type}: {proc.title}</p>
+                    <p className="text-muted-foreground leading-relaxed mb-4">
+                      {proc.description}
+                    </p>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full">
+                      <Star className="w-4 h-4 text-primary" />
+                      <span className="text-sm text-primary">{proc.significance}</span>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <span className="text-sm text-primary font-medium">{award.year}</span>
-                  <h3 className="font-playfair text-xl font-semibold text-foreground mb-1">
-                    {award.title}
-                  </h3>
-                  <p className="text-secondary font-medium text-sm mb-2">
-                    {award.organization}
-                  </p>
-                  <p className="text-muted-foreground">
-                    {award.description}
-                  </p>
+                  
+                  {/* Proclamation Image Placeholder */}
+                  <div className="aspect-[3/4] bg-muted rounded-xl overflow-hidden relative">
+                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-accent/5 to-primary/5">
+                      <p className="text-muted-foreground text-sm font-inter text-center px-4">
+                        [Proclamation Document Image]
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -134,24 +158,52 @@ const Recognition = () => {
         </div>
       </section>
 
-      {/* Proclamations */}
-      <section className="py-20 bg-muted/30">
+      {/* Official Events & Receptions */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="font-playfair text-4xl font-bold text-foreground text-center mb-12">
-            Government Proclamations
+            Official Events & Receptions
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {proclamations.map((item, index) => (
-              <div key={index} className="glass-card rounded-xl p-6 text-center group hover:bg-primary/5 transition-colors">
-                <Scroll className="w-10 h-10 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="font-playfair font-semibold text-foreground mb-1">
-                  {item.entity}
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {officialEvents.map((event, index) => (
+              <div key={index} className="glass-card rounded-2xl p-8 group hover:shadow-elevated transition-all">
+                <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <event.icon className="w-7 h-7 text-secondary" />
+                </div>
+                <h3 className="font-playfair text-xl font-semibold text-foreground mb-3">
+                  {event.title}
                 </h3>
-                <p className="text-sm text-muted-foreground mb-2">
-                  {item.type}
+                <p className="text-muted-foreground text-sm">
+                  {event.description}
                 </p>
-                <p className="text-xs text-primary">{item.year}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partnerships */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="font-playfair text-4xl font-bold text-foreground text-center mb-6">
+            Key Partnerships
+          </h2>
+          <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
+            Our work is strengthened by partnerships with government bodies, cultural institutions, 
+            foundations, and community organizations.
+          </p>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            {partnerships.map((partner, index) => (
+              <div key={index} className="glass-card rounded-xl p-6 text-center group hover:bg-primary/5 transition-colors">
+                <Users className="w-8 h-8 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                <h3 className="font-playfair font-semibold text-foreground text-sm mb-1">
+                  {partner.name}
+                </h3>
+                <p className="text-xs text-muted-foreground">
+                  {partner.type}
+                </p>
               </div>
             ))}
           </div>
@@ -175,11 +227,41 @@ const Recognition = () => {
                   <div>
                     <p className="font-semibold text-foreground">{item.outlet}</p>
                     <p className="text-sm text-muted-foreground">{item.topic}</p>
-                    <p className="text-xs text-primary mt-1">{item.year}</p>
+                    <p className="text-xs text-primary mt-1">{item.type}</p>
                   </div>
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Recognition Gallery */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="font-playfair text-4xl font-bold text-foreground text-center mb-12">
+            Recognition Moments
+          </h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            {[
+              "Congressional Recognition",
+              "Mayor's Proclamation",
+              "UN Exhibition Opening",
+              "Award Ceremony",
+              "VIP Reception",
+              "Community Honor",
+              "Artist Recognition",
+              "Partnership Signing"
+            ].map((item, index) => (
+              <div key={index} className="aspect-square bg-muted rounded-xl overflow-hidden relative">
+                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-accent/5 to-primary/5">
+                  <p className="text-muted-foreground text-xs font-inter text-center px-2">
+                    [{item} Photo]
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -192,7 +274,8 @@ const Recognition = () => {
             <blockquote className="font-playfair text-2xl md:text-3xl italic mb-8 leading-relaxed">
               "The Mithila Center USA has done remarkable work in preserving an ancient art form 
               while making it relevant to contemporary global challenges. Their innovative approach 
-              to cultural diplomacy serves as a model for heritage organizations worldwide."
+              to connecting traditional art with the UN Sustainable Development Goals serves as a 
+              model for heritage organizations worldwide."
             </blockquote>
             <p className="font-inter text-lg opacity-90">— Cultural Heritage Foundation</p>
           </div>
@@ -206,12 +289,17 @@ const Recognition = () => {
             Partner With an Award-Winning Organization
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Our track record of excellence makes us an ideal partner for cultural initiatives, 
-            educational programs, and community engagement projects.
+            Our track record of excellence and official recognition makes us an ideal partner 
+            for cultural initiatives, educational programs, and community engagement projects.
           </p>
-          <Button asChild size="lg">
-            <Link to="/contact">Explore Partnership</Link>
-          </Button>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button asChild size="lg">
+              <Link to="/contact">Explore Partnership</Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <Link to="/about">Learn About Us</Link>
+            </Button>
+          </div>
         </div>
       </section>
 

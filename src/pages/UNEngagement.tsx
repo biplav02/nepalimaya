@@ -2,43 +2,67 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Globe, Building, Award, Users, FileText, Calendar } from 'lucide-react';
+import { Globe, Building, Award, Users, FileText, Calendar, MapPin, Handshake, Landmark } from 'lucide-react';
 
 const UNEngagement = () => {
-  const engagements = [
+  const majorExhibitions = [
     {
-      title: "United Nations Headquarters",
-      location: "New York, USA",
-      description: "Regular exhibitions and presentations at UN headquarters, showcasing Mithila art's connection to sustainable development goals.",
-      year: "2015-Present"
+      year: "April 2019",
+      title: "Inaugural Exhibition: Art for SDGs",
+      location: "UN Headquarters, New York",
+      description: "The groundbreaking exhibition 'Art for SDGs: The Mithila Heritage' was presented at the UN Headquarters in collaboration with the Permanent Mission of Nepal. This pioneering show positioned Mithila art as a vehicle to communicate the SDGs to global delegates and visitors.",
+      highlight: "First-ever Mithila art exhibition at UN Headquarters"
     },
     {
-      title: "UNESCO Intangible Heritage",
-      location: "Paris, France",
-      description: "Advocacy for recognition of Mithila art as intangible cultural heritage of humanity.",
-      year: "Ongoing"
-    },
-    {
-      title: "UN Women Partnerships",
-      location: "Global",
-      description: "Collaboration highlighting women artists and traditional art as a tool for gender equality and economic empowerment.",
-      year: "2018-Present"
-    },
-    {
-      title: "ECOSOC Special Consultative Status",
-      location: "International",
-      description: "Official recognition enabling participation in UN deliberations on cultural and development matters.",
-      year: "2020"
+      year: "July 2024",
+      title: "High-Level Political Forum Exhibition",
+      location: "UN Headquarters (CB-01 Curved Wall)",
+      description: "A major exhibition during the High-Level Political Forum focused on SDG 13: Climate Action, featuring artworks that speak to climate change, environmental stress, and community resilience. Jointly organized by the Permanent Mission of Nepal, Consulate General of Nepal in New York, and Mithila Center USA.",
+      highlight: "Featured during UN's highest-level sustainability forum"
     }
   ];
 
-  const diplomaticMissions = [
-    { country: "Nepal", type: "Embassy Exhibitions" },
-    { country: "India", type: "Cultural Exchange Programs" },
-    { country: "United States", type: "State Department Events" },
-    { country: "Switzerland", type: "UN Geneva Presentations" },
-    { country: "Austria", type: "UN Vienna Collaborations" },
-    { country: "France", type: "UNESCO Advocacy" }
+  const diplomaticPartners = [
+    {
+      entity: "Permanent Mission of Nepal to UN",
+      type: "Primary Diplomatic Partner",
+      collaboration: "Joint organization of UN exhibitions, cultural diplomacy initiatives"
+    },
+    {
+      entity: "Consulate General of Nepal, New York",
+      type: "Government Partner",
+      collaboration: "Festival support, official receptions, community outreach"
+    },
+    {
+      entity: "NYC Mayor's Office",
+      type: "City Government",
+      collaboration: "Official proclamations, cultural heritage recognition"
+    },
+    {
+      entity: "Queens Borough Hall",
+      type: "Local Government",
+      collaboration: "Event hosting, community program support"
+    },
+    {
+      entity: "Flushing Town Hall",
+      type: "Cultural Institution",
+      collaboration: "Arts grants, exhibition space, community programming"
+    }
+  ];
+
+  const achievements = [
+    { icon: Building, value: "2", label: "UN HQ Exhibitions" },
+    { icon: FileText, value: "Multiple", label: "Official Proclamations" },
+    { icon: Landmark, value: "5+", label: "Government Partners" },
+    { icon: Users, value: "10,000+", label: "Global Audience Reached" }
+  ];
+
+  const culturalDiplomacyImpact = [
+    "Positioned Mithila art as a tool for communicating UN Sustainable Development Goals",
+    "Demonstrated how cultural diplomacy and folk art can contribute to international policy conversations",
+    "Created platform for dialogue between artists, diplomats, and global policymakers",
+    "Elevated recognition of South Asian heritage in international forums",
+    "Built bridges between diaspora communities and their ancestral cultural practices"
   ];
 
   return (
@@ -57,15 +81,16 @@ const UNEngagement = () => {
             <h1 className="font-playfair text-5xl md:text-6xl font-bold text-foreground mb-6">
               UN & Diplomatic <span className="gradient-text-cultural">Engagement</span>
             </h1>
-            <p className="text-xl text-muted-foreground">
-              Bringing Mithila art to the world's most important platforms for cultural diplomacy 
-              and sustainable development dialogue.
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              A defining feature of Mithila Center USA is its deep partnership with United Nations 
+              institutions and diplomatic missions, bringing Mithila art to the world's most important 
+              platforms for cultural diplomacy and sustainable development dialogue.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Image Placeholder */}
+      {/* Hero Image Placeholder */}
       <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="aspect-[21/9] bg-muted rounded-2xl overflow-hidden relative max-w-6xl mx-auto">
@@ -83,29 +108,86 @@ const UNEngagement = () => {
         </div>
       </section>
 
-      {/* Key Engagements */}
+      {/* Major UN Exhibitions */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="font-playfair text-4xl font-bold text-foreground text-center mb-16">
-            Key International Engagements
+          <h2 className="font-playfair text-4xl font-bold text-foreground text-center mb-6">
+            Major UN Exhibitions
           </h2>
+          <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-16">
+            Our exhibitions at UN Headquarters have positioned Mithila art as a powerful medium 
+            for communicating sustainable development messages to global audiences.
+          </p>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {engagements.map((item, index) => (
-              <div key={index} className="glass-card rounded-2xl p-8 group hover:shadow-elevated transition-all duration-300">
-                <div className="flex items-start justify-between mb-4">
-                  <span className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
-                    {item.year}
-                  </span>
+          <div className="space-y-8 max-w-5xl mx-auto">
+            {majorExhibitions.map((exhibition, index) => (
+              <div key={index} className="glass-card rounded-3xl p-8 md:p-10">
+                <div className="grid lg:grid-cols-3 gap-8">
+                  <div className="lg:col-span-2">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
+                        {exhibition.year}
+                      </span>
+                      <span className="text-primary font-medium text-sm flex items-center gap-1">
+                        <MapPin className="w-4 h-4" />
+                        {exhibition.location}
+                      </span>
+                    </div>
+                    <h3 className="font-playfair text-2xl font-semibold text-foreground mb-4">
+                      {exhibition.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed mb-4">
+                      {exhibition.description}
+                    </p>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-lg">
+                      <Award className="w-4 h-4 text-accent-foreground" />
+                      <span className="text-sm font-medium text-accent-foreground">
+                        {exhibition.highlight}
+                      </span>
+                    </div>
+                  </div>
+                  
+                  {/* Exhibition Image Placeholder */}
+                  <div className="aspect-[4/3] bg-muted rounded-xl overflow-hidden relative">
+                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-secondary/5 to-primary/5">
+                      <p className="text-muted-foreground text-sm font-inter text-center px-4">
+                        [Exhibition Photo Placeholder]
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="font-playfair text-xl font-semibold text-foreground mb-2">
-                  {item.title}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Diplomatic Partners */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="font-playfair text-4xl font-bold text-foreground text-center mb-6">
+            Diplomatic & Government Partners
+          </h2>
+          <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-16">
+            Our exhibitions and programs have been supported or hosted by major government 
+            bodies and cultural institutions, underscoring our role as a cultural partner in 
+            city and state-level diplomacy around heritage and sustainability.
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {diplomaticPartners.map((partner, index) => (
+              <div key={index} className="glass-card rounded-2xl p-6 group hover:shadow-elevated transition-all">
+                <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Handshake className="w-6 h-6 text-secondary" />
+                </div>
+                <h3 className="font-playfair text-lg font-semibold text-foreground mb-1">
+                  {partner.entity}
                 </h3>
                 <p className="text-sm text-primary font-medium mb-3">
-                  {item.location}
+                  {partner.type}
                 </p>
-                <p className="text-muted-foreground">
-                  {item.description}
+                <p className="text-sm text-muted-foreground">
+                  {partner.collaboration}
                 </p>
               </div>
             ))}
@@ -113,37 +195,47 @@ const UNEngagement = () => {
         </div>
       </section>
 
-      {/* Diplomatic Reach */}
-      <section className="py-20">
+      {/* Cultural Diplomacy Impact */}
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="font-playfair text-4xl font-bold text-foreground mb-4">
-                Diplomatic Reach
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Our partnerships span embassies, consulates, and international organizations worldwide.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {diplomaticMissions.map((mission, index) => (
-                <div key={index} className="glass-card rounded-xl p-6 text-center group hover:bg-primary/5 transition-colors">
-                  <Globe className="w-8 h-8 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
-                  <h3 className="font-playfair font-semibold text-foreground">
-                    {mission.country}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {mission.type}
-                  </p>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="font-playfair text-3xl font-bold text-foreground mb-6">
+                  Cultural Diplomacy Impact
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Through our UN partnerships and diplomatic engagements, Mithila Center USA has 
+                  demonstrated how cultural diplomacy and folk art can contribute to international 
+                  policy conversations and global awareness.
+                </p>
+                <ul className="space-y-4">
+                  {culturalDiplomacyImpact.map((impact, index) => (
+                    <li key={index} className="flex items-start gap-3 text-muted-foreground">
+                      <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                      {impact}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              {/* Image Placeholder */}
+              <div className="aspect-square bg-muted rounded-2xl overflow-hidden relative">
+                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-secondary/5 to-primary/5">
+                  <div className="text-center p-8">
+                    <Globe className="w-16 h-16 text-secondary/30 mx-auto mb-4" />
+                    <p className="text-muted-foreground font-inter">
+                      [Diplomatic Reception Image Placeholder]
+                    </p>
+                  </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Achievements */}
+      {/* Achievements Stats */}
       <section className="py-20 bg-gradient-peacock text-secondary-foreground">
         <div className="container mx-auto px-4">
           <h2 className="font-playfair text-4xl font-bold text-center mb-12">
@@ -151,12 +243,7 @@ const UNEngagement = () => {
           </h2>
           
           <div className="grid md:grid-cols-4 gap-8 text-center max-w-5xl mx-auto">
-            {[
-              { icon: Building, value: "6", label: "UN Agency Partnerships" },
-              { icon: FileText, value: "15+", label: "Official Presentations" },
-              { icon: Award, value: "3", label: "International Awards" },
-              { icon: Users, value: "50+", label: "Countries Represented" }
-            ].map((stat, index) => (
+            {achievements.map((stat, index) => (
               <div key={index}>
                 <stat.icon className="w-10 h-10 mx-auto mb-3 opacity-80" />
                 <div className="font-playfair text-4xl font-bold mb-2">
@@ -171,19 +258,54 @@ const UNEngagement = () => {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Gallery Section */}
       <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="font-playfair text-4xl font-bold text-foreground text-center mb-12">
+            Moments from UN Engagements
+          </h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            {[
+              "UN Exhibition Opening",
+              "Diplomatic Reception",
+              "HLPF Presentation",
+              "Artist Demonstration",
+              "VIP Gallery Tour",
+              "Panel Discussion",
+              "Cultural Performance",
+              "Awards Ceremony"
+            ].map((item, index) => (
+              <div key={index} className="aspect-square bg-muted rounded-xl overflow-hidden relative">
+                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-secondary/5 to-primary/5">
+                  <p className="text-muted-foreground text-xs font-inter text-center px-2">
+                    [{item} Image]
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-playfair text-3xl font-bold text-foreground mb-6">
             Partner With Us
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Interested in bringing Mithila art to your institution or diplomatic event? 
-            Let's discuss collaboration opportunities.
+            Interested in bringing Mithila art to your institution, embassy, or diplomatic event? 
+            Let's discuss collaboration opportunities for cultural diplomacy and heritage promotion.
           </p>
-          <Button asChild size="lg">
-            <Link to="/contact">Get in Touch</Link>
-          </Button>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button asChild size="lg">
+              <Link to="/contact">Get in Touch</Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <Link to="/art-for-sdgs">Explore Art for SDGs</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
